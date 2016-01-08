@@ -1,0 +1,204 @@
+import tkinter as tk
+from tkinter import *
+
+#Anfangsfenster 
+root = Tk()
+root.geometry("280x280")
+root.config(bg="light blue")
+root.title("Quiz")
+
+#Frage 1:
+def Frage1():
+
+#Richtige Antwort
+    def closeuweiter():
+        def close():
+            tk2.destroy()
+            
+        tk2= Tk()
+        tk2.geometry("280x150")
+        tk2.title("Antwort")
+        tk2.config(bg="#92F29F")
+        Label1=Label(tk2,text="Ihre Antwort ist RICHTIG !!",bg="#92F29F").pack()
+        Button1=Button(tk2,text="Weiter",command=close,bg="#ABA397").pack()
+        tk.mainloop
+        tk.destroy()
+        Frage2()
+
+#Falsche Antwort
+    def falsch():
+        tk.destroy()
+
+        def close():
+            tk2.destroy()
+            
+        tk2= Tk()
+        tk2.geometry("280x150")
+        tk2.title("Falsch")
+        tk2.config(bg="#E63F3F")
+        Label1=Label(tk2,text="Leider Verloren",bg="black",fg="white").pack()
+        Button1=Button(tk2,text="Weiter",command=close,bg="#ABA397",fg="white").pack()
+        Label1=Label(tk2,text="Klicke im Quizfenster\n auf den Knopf um nochmal zu spielen",bg="black", fg="white").pack()
+        tk2.mainloop
+        
+    tk= Tk()
+    tk.geometry("280x280")
+    tk.title("Frage 1")
+    tk.config(bg="#FDB857")
+    
+#Frage 1 wird definiert 
+    Frage1=Label(tk, text="1. Von wann bis wann ging der erste Weltkrieg?",bg="#FA9913").pack() 
+    
+    ButtonA=Button(tk, text="1914-1918",width=75,bg="light blue",command=closeuweiter).pack() #Richtige Antwort
+    ButtonB=Button(tk, text="2000-2004",width=75,bg="light blue",command=falsch).pack()
+    ButtonC=Button(tk, text="1996-2000",width=75,bg="light blue",command=falsch).pack()
+    ButtonD=Button(tk, text="1939-1945",width=75,bg="light blue",command=falsch).pack()
+#Button zum Starten    
+Frage1button=Button(height=1,text="Quiz starten",width=75,bg="light yellow",command=Frage1).pack()
+
+#Frage 2:
+def Frage2():
+    def closeuweiter(): #Bei Richtiger Antwort von Frage 2
+        def close():
+            tk2.destroy()
+            
+        tk2= Tk()
+        tk2.geometry("280x150")
+        tk2.title("Antwort")
+        tk2.config(bg="#92F29F")
+        Label1=Label(tk2,text="""RICHTG""",bg="#92F29F").pack()
+        Button1=Button(tk2,text="Weiter",command=close,bg="#ABA397").pack()
+        tk.mainloop
+        tk.destroy()
+        Frage3()
+        
+    def falsch(): #Bei Falscher Antwort von Frage 2
+        def close():
+            tk2.destroy()
+            tk.destroy()
+            
+        tk2= Tk()
+        tk2.geometry("280x150")
+        tk2.title("Falsch")
+        tk2.config(bg="#E63F3F")
+        Label1=Label(tk2,text="Leider Verloren",bg="black",fg="white").pack()
+        Button1=Button(tk2,text="Weiter",command=close,bg="#ABA397",fg="white").pack()
+        Label1=Label(tk2,text="Klicke im Quizfenster\n auf den Knopf um nochmal zu spielen",bg="black", fg="white").pack()
+        tk.mainloop
+
+    tk= Tk()
+    tk.geometry("280x280")
+    tk.title("Frage 2")
+    tk.config(bg="#FDB857")
+
+    #Frage 2 wird definiert
+    Frage1=Label(tk, text="2.Welche Staaten gewannen den zweiten Weltkrieg?",bg="#FA9913").pack()
+    Radiobutton5=Button(tk, text="Deutschland und USA",width=75,bg="light blue",command=falsch).pack()
+    Radiobutton6=Button(tk, text="Frankreich und Deutschland",bg="light blue",width=75,command=falsch).pack()
+    Radiobutton7=Button(tk, text="Sowejtunion, USA, Großbritanien und Frankreich",bg="light blue",width=75,command=closeuweiter).pack()   # Richtige Antwort
+    Radiobutton8=Button(tk, text="Deutschland, Frankreich, USA und Norwegen",width=75,bg="light blue",command=falsch).pack()
+
+
+#Frage 3:
+def Frage3():
+    def closeuweiter():
+        def close():
+            tk2.destroy()
+            
+        tk2= Tk()
+        tk2.geometry("280x150")
+        tk2.title("Antwort")
+        tk2.config(bg="#92F29F")
+        Label1=Label(tk2,text="""RICHTG""",bg="#92F29F").pack()
+        Button1=Button(tk2,text="Weiter",command=close,bg="#ABA397").pack()
+        tk.mainloop
+        tk.destroy()
+        Frage4()
+
+    def falsch():
+        def close():
+            tk2.destroy()
+            tk.destroy()
+            
+        tk2= Tk()
+        tk2.geometry("280x150")
+        tk2.title("Falsch")
+        tk2.config(bg="#E63F3F")
+        Label1=Label(tk2,text="Leider Verloren",bg="black", fg="white").pack()
+        Button1=Button(tk2,text="Weiter",command=close,bg="#ABA397", fg="white").pack()
+        Label1=Label(tk2,text="Klicke im Quizfenster\n auf den Knopf um nochmal zu spielen",bg="black", fg="white").pack()
+        tk.mainloop
+        
+    tk= Tk()
+    tk.geometry("280x280")
+    tk.title("Frage 3")
+    tk.config(bg="#FDB857")
+
+    #Frage 3 wird definiert
+    Frage1=Label(tk, text="3. Wann wurde Hitler zum Reichskanzler ernannt?",bg="#FA9913").pack()
+    Radiobutton9=Button(tk, text="2. November 1945",width=75,bg="light blue",command=falsch).pack()
+    Radiobutton10=Button(tk, text="22. Septemper 1939",width=75,bg="light blue",command=falsch).pack()
+    Radiobutton11=Button(tk, text="3. April 1930",width=75,bg="light blue",command=falsch).pack()
+    Radiobutton12=Button(tk, text="30. Januar 1933",width=75,bg="light blue",command=closeuweiter).pack()  #  Richtige Antwort
+
+
+#Frage 4:
+
+    #bei richtiger Antwort
+def Frage4():
+    def closeuweiter():
+        def close():
+            tk.destroy()
+            tk2.destroy
+            
+        tk2= Tk()
+        tk2.geometry("280x150")
+        tk2.title("Antwort")
+        tk2.config(bg="#92F29F")
+        Label1=Label(tk2,text="""RICHTG""",bg="#92F29F").pack()
+        Button1=Button(tk2,text="Weiter",command=close,bg="#ABA397").pack()
+        tk.mainloop
+
+     #bei falscher Antwort 
+    def falsch4():
+        def close():
+            tk.destroy()
+            tk2.destroy()
+            
+        tk2= Tk()
+        tk2.geometry("280x150")
+        tk2.title("Falsch")
+        tk2.config(bg="#E63F3F")
+        Label1=Label(tk2,text="Leider Verloren",bg="black", fg="white").pack()
+        Button1=Button(tk2,text="Weiter",command=close,bg="#ABA397", fg="white").pack()
+        Label1=Label(tk2,text="Klicke im Quizfenster\n auf den Knopf um nochmal zu spielen",bg="black", fg="white").pack()
+        tk.mainloop
+
+    #bei richtiger Antwort, spiel wird beendet 
+    def fertig():
+        def close():
+            tk2.destroy()
+
+        tk2= Tk()
+        tk2.geometry("280x150")
+        tk2.title("Spiel beendet")
+        tk2.config(bg="#92F29F")
+        Label1=Label (tk2,text="Sie haben das Quiz erfolgreich beendet!", bg="black", fg="white").pack()  
+        tk.mainloop 
+        
+
+    tk= Tk()
+    tk.geometry("280x280")
+    tk.title("Frage 4")
+    tk.config(bg="#FDB857")
+
+    #Frage 4 wird definiert
+    Frage1=Label(tk, text="4.Wie lange dauerte der 30-jährige Krieg?",bg="#FA9913").pack()
+    Radiobutton9=Button(tk, text="30 Tage",width=75,bg="light blue",command=falsch4).pack()
+    Radiobutton10=Button(tk, text="30 Jahre",width=75,bg="light blue",command=fertig).pack()   # Richtige Antwort
+    Radiobutton11=Button(tk, text="30 Monate",width=75,bg="light blue",command=falsch4).pack()
+    Radiobutton12=Button(tk, text="30 Stunden",width=75,bg="light blue",command=falsch4).pack()
+
+
+root.mainloop()
+
